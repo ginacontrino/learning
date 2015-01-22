@@ -1,21 +1,40 @@
-exports.sumArrayEven = function(myArray) {
+module.exports = {
 
-  var total = 0;
 
-    for (var index=0; index<myArray.length; index++)
+sumArray: function(myArray) {
 
-    {
 
-      var currentNumber = myArray[index];
+    var total = getEvenArray(myArray).reduce(function(prev, curr)
+  {
 
-      if ( currentNumber % 2==0)
+    return prev + curr;
 
-      {
-        total += currentNumber;
+  });
 
-      }
+  return total;
+},
 
-    }
 
-    return total;
+
+isEvenNumber: function(number) {
+
+  return number % 2 === 0;
+
+},
+
+
+filterArray: function(myArray,filter) {
+
+  var filtered = myArray.filter(filter);
+  return filtered;
+
+},
+
+
+getEvenArray: function(myArray) {
+
+  return filterArray(myArray, isEvenNumber);
+
+}
+
 };
