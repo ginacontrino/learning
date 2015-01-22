@@ -4,7 +4,7 @@ module.exports = {
 sumArray: function(myArray) {
 
 
-    var total = getEvenArray(myArray).reduce(function(prev, curr)
+    var total = this.getEvenArray(myArray).reduce(function(prev, curr)
   {
 
     return prev + curr;
@@ -33,7 +33,7 @@ filterArray: function(myArray,filter) {
 
 getEvenArray: function(myArray) {
 
-  return filterArray(myArray, isEvenNumber);
+  return this.filterArray(myArray, this.isEvenNumber);
 
 }
 
